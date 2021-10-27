@@ -33,7 +33,7 @@ public class EmployeServiceImplTest {
 	
 		Employe emp = new Employe("Bouzayen", "Mohamed","",true, Role.INGENIEUR); 
 		Employe empAdded = emp_sev.addEmploye(emp); 
-		assertNotNull(empAdded);
+		assertNotNull(empAdded.getId());
 		
 		//Assert.assertEquals(emp.getId(), userAdded.getLastName());
 	}

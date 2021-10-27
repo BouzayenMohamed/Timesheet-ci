@@ -40,16 +40,15 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public Employe addEmploye(Employe emp) {
-		try{
-			l.info("Adding Employe To Data Base :");
-			emp_rep.save(emp);
-		}catch (Exception e) {
+		
+			
+		
 
-			l.error("Error Adding Employe");
+			
 
 
-		}
-		return null;
+	
+		return emp_rep.save(emp);
 	}
 
 	@Override
@@ -77,7 +76,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		l.info("in  retrieveUser id = " + id);
 		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
 		//int i = 1/0; 
-		Employe e =  emp_rep.findById(id).get(); 
+		Employe e =  emp_rep.findById(id).orElse(null); 
 		l.info("Employe found : " + e);
 		return e; 
 	}
