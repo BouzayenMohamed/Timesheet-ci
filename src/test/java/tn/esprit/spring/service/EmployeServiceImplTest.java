@@ -2,7 +2,9 @@ package tn.esprit.spring.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,23 +22,23 @@ public class EmployeServiceImplTest {
 	@Autowired
 	EmployeServiceImpl emp_sev;
 	
-	
-	@Test
-	public void testretrieveAllEmployes(){
-		assertEquals(1,emp_sev.retrieveAllEmployes() );
-
-	}
-	
 	@Test
 	public void testAddEmploye()  {
 		
 	
 		Employe emp = new Employe("Bouzayen", "Mohamed","",true, Role.INGENIEUR); 
 		Employe empAdded = emp_sev.addEmploye(emp); 
-		assertNotNull(empAdded);
-		
-		//Assert.assertEquals(emp.getId(), userAdded.getLastName());
+		Assert.assertEquals(emp.getNom(), empAdded.getNom());
 	}
+	@Test
+	public void testretrieveAllEmployes(){
+		assertTrue(emp_sev.retrieveAllEmployes().size()>1);
+	
+		
+
+	}
+	
+	
  
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.EntrepriseRepository;
 
 @Service
@@ -40,14 +41,14 @@ public class EntrepriseServiceImpl implements IEntrepriseServes {
 	public Entreprise addEntreprise(Entreprise en) {
 		try{
 			l.info(" ajout de l'entreprise  :");
-			ent_repo.save(en);
+			return ent_repo.save(en);
 		}catch (Exception e) {
 
 			l.error("Error dans l'ajout d'entreprise ");
 
-
+			return null;
 		}
-		return null;
+
 	}
 
 	@Override
@@ -61,6 +62,22 @@ public class EntrepriseServiceImpl implements IEntrepriseServes {
 			l.error("The entreprise  with id = %d does not Exist",id);
 		}
 		
+	}
+
+	@Override
+	public Entreprise updateEntreprise(Entreprise en) {
+		return ent_repo.save(en);
+		
+	}
+
+	@Override
+	public Entreprise retrieveEntreprise(int id) {
+		l.info("in  retrieveEntreprise id = " + id);
+		//orElse(null);
+		 
+		Entreprise E=  ent_repo.findById(id).get();
+		l.info("Entreprise returned : " + E);
+		return E; 
 	}
 	
 	

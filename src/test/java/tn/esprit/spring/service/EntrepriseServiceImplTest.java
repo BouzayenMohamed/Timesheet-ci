@@ -2,6 +2,7 @@ package tn.esprit.spring.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +25,8 @@ public class EntrepriseServiceImplTest {
 	
 	@Test
 	public void testretrieveAllEmployes(){
-		assertEquals(1,ent_sev.retrieveAllEntreprise() );
+	
+		assertTrue(ent_sev.retrieveAllEntreprise().size()>2);
 
 	}
 	
