@@ -1,8 +1,5 @@
 tn\esprit\spring\entities\Entreprise.class
-<<<<<<< HEAD
-=======
 tn\esprit\spring\repository\EntrepriseRepository.class
->>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
 tn\esprit\spring\services\EmployeServiceImpl.class
 tn\esprit\spring\entities\Employe.class
 tn\esprit\spring\entities\Departement.class
@@ -12,18 +9,12 @@ tn\esprit\spring\entities\MissionExterne.class
 tn\esprit\spring\entities\Role.class
 tn\esprit\spring\entities\User.class
 tn\esprit\spring\services\IEmployeService.class
-<<<<<<< HEAD
-=======
 tn\esprit\spring\services\IEntrepriseServes.class
->>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
 tn\esprit\spring\services\IUserService.class
 tn\esprit\spring\entities\Mission.class
 tn\esprit\spring\entities\TimesheetPK.class
 tn\esprit\spring\repository\UserRepository.class
-<<<<<<< HEAD
-=======
 tn\esprit\spring\services\EntrepriseServiceImpl.class
->>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
 tn\esprit\spring\repository\EmployeRepository.class
 tn\esprit\spring\services\UserServiceImpl.class
 tn\esprit\spring\entities\Contrat.class

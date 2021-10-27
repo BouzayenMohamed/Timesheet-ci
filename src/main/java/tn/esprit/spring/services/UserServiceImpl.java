@@ -64,14 +64,13 @@ public class UserServiceImpl implements IUserService {
 		l.info("in  retrieveUser id = " + id);
 		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
 		//int i = 1/0; 
-<<<<<<< HEAD
-		User u =  userRepository.findById(Long.parseLong(id)).orElse(null); 
-=======
+
+
 		User u =  userRepository.findById(id).orElse(null); 
->>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
+
 		l.info("user returned : " + u);
 		System.out.println("\n*********************" +u+"*****************");
-		return u; 
+	    return u;
 	}
 
 }

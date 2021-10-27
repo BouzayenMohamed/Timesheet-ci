@@ -1,11 +1,19 @@
 package tn.esprit.spring.service;
 
-import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,36 +21,64 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Role;
+import tn.esprit.spring.entities.User;
 import tn.esprit.spring.services.EmployeServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EmployeServiceImplTest {
 	
+	static int id_added;
+	
 	@Autowired
 	EmployeServiceImpl emp_sev;
 	
 	@Test
-	public void testAddEmploye()  {
+    @Order(1)
+	public void A_testAddEmploye()  {
 		
 	
 		Employe emp = new Employe("Bouzayen", "Mohamed","",true, Role.INGENIEUR); 
 		Employe empAdded = emp_sev.addEmploye(emp); 
-<<<<<<< HEAD
+		id_added = empAdded.getId();
 		assertNotNull(empAdded.getId());
-=======
-		Assert.assertEquals(emp.getNom(), empAdded.getNom());
+
+	}
+	
+	@Test
+	@Order(3)
+	public void B_TestRetreiveEmploye(){
+		Employe RetreivedEmp = emp_sev.retrieveEmploye(id_added);
+		Assert.assertNotNull(RetreivedEmp);
 	}
 	@Test
-	public void testretrieveAllEmployes(){
-		assertTrue(emp_sev.retrieveAllEmployes().size()>1);
+	@Order(4)
+	public void C_testModifyEmployee() throws ParseException {
+		
+		Employe emp = emp_sev.retrieveEmploye(id_added);
+		Employe emp_modifyed = emp;
+		emp_modifyed.setNom("Bouzayen222222");
+		Employe EmployeUpdated  = emp_sev.updateEmploye(emp);
+		//id_to_add = userUpdated.getId();
+		Assert.assertTrue(0==emp.getNom().compareTo(EmployeUpdated.getNom()));
+	}
+
+	@Test
+	@Order(2)
+	public void AB_testretrieveAllEmployes(){
+		assertTrue(emp_sev.retrieveAllEmployes().size()==1);
 	
->>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
+
 		
 
 	}
 	
-	
+	@Test
+	@AfterAll
+	public void D_TestDeleteEmploye(){
+		emp_sev.deleteEmploye(id_added);
+		Assert.assertTrue(emp_sev.retrieveEmploye(id_added)==null);
+	}
  
 
 }
