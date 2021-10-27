@@ -26,14 +26,10 @@ import tn.esprit.spring.services.IUserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserServiceImplTest {
-	long id_to_delete ;
+	static long id_to_delete ;
+	static long id_to_add;
 
-	@Test
-	@AfterAll
-	public void testdeleteuser (){
-		us.deleteUser(id_to_delete);
-		assertNull(us.retrieveUser(id_to_delete));
-	}
+
 		@Autowired
 		IUserService us; 
 	
@@ -66,19 +62,24 @@ public class UserServiceImplTest {
 			Date d = dateFormat.parse("2015-03-23");
 			User u = new User(5L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u);
-			id_to_delete = userUpdated.getId();
+			
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
 		@Test
 		@Order(3)
 		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser(id_to_delete); 
+			User userRetrieved = us.retrieveUser(id_to_add); 
 			
-			assertTrue(userRetrieved.getId()>0);
+			Assert.assertNotNull(userRetrieved);
 		}
 		
-
+		@Test
+		@AfterAll
+		public void testdeleteuser (){
+			us.deleteUser(id_to_delete);
+			Assert.assertNull(us.retrieveUser(id_to_delete));
+		}
 		
 		// 5 tests unitaires  
  
