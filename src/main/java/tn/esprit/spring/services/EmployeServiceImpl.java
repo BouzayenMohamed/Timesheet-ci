@@ -42,14 +42,14 @@ public class EmployeServiceImpl implements IEmployeService {
 	public Employe addEmploye(Employe emp) {
 		try{
 			l.info("Adding Employe To Data Base :");
-			emp_rep.save(emp);
+			return emp_rep.save(emp);
 		}catch (Exception e) {
 
 			l.error("Error Adding Employe");
 
-
+			return null;
 		}
-		return null;
+		
 	}
 
 	@Override
