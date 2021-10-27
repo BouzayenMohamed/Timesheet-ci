@@ -40,15 +40,28 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public Employe addEmploye(Employe emp) {
+<<<<<<< HEAD
 		
 			
 		
+=======
+		try{
+			l.info("Adding Employe To Data Base :");
+			return emp_rep.save(emp);
+		}catch (Exception e) {
+>>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
 
 			
 
+<<<<<<< HEAD
 
 	
 		return emp_rep.save(emp);
+=======
+			return null;
+		}
+		
+>>>>>>> 42fb6ca684eaba988f20f97938909f7520f740be
 	}
 
 	@Override
