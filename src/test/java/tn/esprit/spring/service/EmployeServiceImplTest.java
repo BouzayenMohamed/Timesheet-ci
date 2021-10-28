@@ -5,27 +5,29 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Role;
-import tn.esprit.spring.entities.User;
+
 import tn.esprit.spring.services.EmployeServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmployeServiceImplTest {
 	
 	static int id_added;
@@ -66,7 +68,7 @@ public class EmployeServiceImplTest {
 	@Test
 	@Order(2)
 	public void AB_testretrieveAllEmployes(){
-		assertTrue(emp_sev.retrieveAllEmployes().size()==1);
+		assertTrue(emp_sev.retrieveAllEmployes().size()>=1);
 	
 
 		
