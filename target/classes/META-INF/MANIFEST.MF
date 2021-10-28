@@ -4,6 +4,7 @@ Implementation-Version: 1.0
 Built-By: Bouzayen
 Implementation-Vendor-Id: tn.esprit.spring
 Build-Jdk: 1.8.0_60
-Implementation-URL: http://localhost:8081/repository/maven-releases/
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/timesheet-ci
 Created-By: Maven Integration for Eclipse
 
