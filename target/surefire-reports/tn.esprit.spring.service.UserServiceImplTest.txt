@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tn.esprit.spring.service.UserServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.016 s <<< FAILURE! - in tn.esprit.spring.service.UserServiceImplTest
-testRetrieveUser  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError
-	at tn.esprit.spring.service.UserServiceImplTest.testRetrieveUser(UserServiceImplTest.java:74)
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in tn.esprit.spring.service.UserServiceImplTest
