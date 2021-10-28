@@ -59,7 +59,7 @@ public class EmployeServiceImplTest {
 		Employe emp_modifyed = emp;
 		emp_modifyed.setNom("Bouzayen222222");
 		Employe EmployeUpdated  = emp_sev.updateEmploye(emp);
-		//id_to_add = userUpdated.getId();
+		
 		Assert.assertTrue(0==emp.getNom().compareTo(EmployeUpdated.getNom()));
 	}
 
