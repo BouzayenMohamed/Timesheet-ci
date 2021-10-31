@@ -2,7 +2,6 @@
 package tn.esprit.spring.service;
 
  
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
@@ -11,10 +10,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -25,9 +26,10 @@ import tn.esprit.spring.services.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserServiceImplTest {
-	static long id_to_delete ;
-	static long id_to_add;
+	static long id_to_delete   ;
+	 long id_to_add;
 
 
 		@Autowired
@@ -35,7 +37,7 @@ public class UserServiceImplTest {
 	
 		@Test
 		@Order(4)
-		public void testRetrieveAllUsers() {
+		public void C_testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
 			assertTrue(listUsers.size()>1);
@@ -45,7 +47,7 @@ public class UserServiceImplTest {
 		
 		@Test
 		@Order(1)
-		public void testAddUser() throws ParseException {
+		public void A_testAddUser() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
 			User u = new User("Mayssa1", "Mayssa1", d, Role.INGENIEUR); 
@@ -57,26 +59,24 @@ public class UserServiceImplTest {
 	 
 		@Test
 		@Order(2)
-		public void testModifyUser() throws ParseException   {
+		public void B_testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
 			User u = new User(5L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
-			User userUpdated  = us.updateUser(u);
-			
+			User userUpdated  = us.updateUser(u);	
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
 		@Test
 		@Order(3)
-		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser(id_to_add); 
-			
+		public void D_testRetrieveUser() {
+			User userRetrieved = us.retrieveUser(id_to_delete); 
 			Assert.assertNotNull(userRetrieved);
 		}
 		
 		@Test
 		@AfterAll
-		public void testdeleteuser (){
+		public void E_testdeleteuser (){
 			us.deleteUser(id_to_delete);
 			Assert.assertNull(us.retrieveUser(id_to_delete));
 		}
