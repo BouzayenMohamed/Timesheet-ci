@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tn.esprit.spring.service.EntrepriseServiceImplTest" time="0.127" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tn.esprit.spring.service.DepartementServiceImplTest" time="7.044" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,6 +60,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testAddEmploye" classname="tn.esprit.spring.service.EntrepriseServiceImplTest" time="0.01"/>
-  <testcase name="testretrieveAllEmployes" classname="tn.esprit.spring.service.EntrepriseServiceImplTest" time="0.114"/>
+  <testcase name="A_testAddDepartement" classname="tn.esprit.spring.service.DepartementServiceImplTest" time="0.309"/>
+  <testcase name="B_RetrieveDepById" classname="tn.esprit.spring.service.DepartementServiceImplTest" time="0.212"/>
+  <testcase name="C_ModifyDepartement" classname="tn.esprit.spring.service.DepartementServiceImplTest" time="0.079"/>
+  <testcase name="D_testRetrieveAllDepartements" classname="tn.esprit.spring.service.DepartementServiceImplTest" time="0.222"/>
+  <testcase name="E_DeleteDepartementById" classname="tn.esprit.spring.service.DepartementServiceImplTest" time="0.145"/>
 </testsuite>
