@@ -57,7 +57,7 @@ public class EmployeServiceImplTest {
 		
 		Employe emp = emp_sev.retrieveEmploye(id_added);
 		Employe emp_modifyed = emp;
-		emp_modifyed.setNom("Bouzayen254");
+		emp_modifyed.setNom("Bouzayen258584");
 		Employe EmployeUpdated  = emp_sev.updateEmploye(emp);
 		
 		Assert.assertTrue(0==emp.getNom().compareTo(EmployeUpdated.getNom()));
