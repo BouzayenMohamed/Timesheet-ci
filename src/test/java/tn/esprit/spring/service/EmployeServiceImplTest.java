@@ -42,6 +42,8 @@ public class EmployeServiceImplTest {
 		Employe empAdded = emp_sev.addEmploye(emp); 
 		id_added = empAdded.getId();
 		assertNotNull(empAdded.getId());
+		
+		
 
 	}
 	
