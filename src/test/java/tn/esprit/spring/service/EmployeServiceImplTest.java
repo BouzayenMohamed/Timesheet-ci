@@ -67,9 +67,7 @@ public class EmployeServiceImplTest {
 	@Order(2)
 	public void AB_testretrieveAllEmployes(){
 		assertTrue(emp_sev.retrieveAllEmployes().size()>=1);
-	
 
-		
 
 	}
 	
