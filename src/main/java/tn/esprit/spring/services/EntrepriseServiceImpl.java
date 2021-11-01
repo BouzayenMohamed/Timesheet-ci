@@ -75,7 +75,7 @@ public class EntrepriseServiceImpl implements IEntrepriseServes {
 		l.info("in  retrieveEntreprise id = " + id);
 		//orElse(null);
 		 
-		Entreprise E=  ent_repo.findById(id).get();
+		Entreprise E=  ent_repo.findById(id).orElse(null);
 		l.info("Entreprise returned : " + E);
 		return E; 
 	}
