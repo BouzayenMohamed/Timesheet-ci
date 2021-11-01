@@ -56,7 +56,7 @@ public class EntrepriseServiceImplTest {
 		entr_modifyed.setName("Esprit222");
 		Entreprise EntrepriseUpdated  = ent_sev.updateEntreprise(entr_modifyed);
 		
-		Assert.assertTrue(0!=entr.getName().compareTo(EntrepriseUpdated.getName()));
+		Assert.assertTrue(0==entr_modifyed.getName().compareTo(EntrepriseUpdated.getName()));
 	}
 	@Test
 	@Order(4)
