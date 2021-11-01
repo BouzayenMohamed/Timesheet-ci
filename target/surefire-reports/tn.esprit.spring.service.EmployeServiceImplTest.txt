@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tn.esprit.spring.service.EmployeServiceImplTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.202 s - in tn.esprit.spring.service.EmployeServiceImplTest
+=======
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 s - in tn.esprit.spring.service.EmployeServiceImplTest
+>>>>>>> 87bb7d407d218f8b70dcc6df1e37eaee0f7cb3dd
