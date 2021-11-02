@@ -1,14 +1,10 @@
 Manifest-Version: 1.0
+Built-By: raeda
+Build-Jdk: 17
 Implementation-Title: timesheet-ci
 Implementation-Version: 1.0
-<<<<<<< HEAD
-Built-By: Bouzayen
-=======
-Built-By: Mona
->>>>>>> 01f6e27a51c81bf9734639044c06421612a4e5a6
 Implementation-Vendor-Id: tn.esprit.spring
-Build-Jdk: 1.8.0_60
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/timesheet-ci
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/timesheet-ci
 Created-By: Maven Integration for Eclipse
 
