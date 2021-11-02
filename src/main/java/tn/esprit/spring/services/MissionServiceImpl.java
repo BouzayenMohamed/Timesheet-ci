@@ -20,7 +20,7 @@ public class MissionServiceImpl implements IMissionService {
 		List<Mission> missions = null;
 		try {
 
-			l.info("enter  retrieveAllMission  () : ");
+			l.info("enter  retrieveAllMissions  () : ");
 			missions = (List<Mission>) mis_repo.findAll();  
 			for (Mission et : missions) {
 				l.debug("user +++ : " + et);
