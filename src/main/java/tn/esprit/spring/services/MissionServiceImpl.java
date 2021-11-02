@@ -25,9 +25,9 @@ public class MissionServiceImpl implements IMissionService {
 			for (Mission et : missions) {
 				l.debug("user +++ : " + et);
 			} 
-			l.info("fonction retrieveAllmission ended () : ");
+			l.info("fonction retrieveAllmissions ended () : ");
 		}catch (Exception e) {
-			l.error("Error  in  retrieveAllmission() : " + e);
+			l.error("Error  in  retrieveAllmissions() : " + e);
 		}
 
 		return missions;
